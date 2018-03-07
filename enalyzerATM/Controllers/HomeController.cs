@@ -10,7 +10,10 @@ namespace enalyzerATM.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.AmountTitle = "Select amount";
+            //TODO : User res file to think about futur translation
+            ViewBag.TouchPadTitle = "Select amount";
+            ViewBag.ResultTitle = "Depositing";
+            ViewBag.ThanksMessage = "Thank you for using";
             return View();
         }
     }

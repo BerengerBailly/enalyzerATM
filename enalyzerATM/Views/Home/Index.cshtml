@@ -9,31 +9,38 @@
 </section>
     
 @*Application touch pad section*@
-<section id="sectionTouchPad" style="background-color:blue">
-    <div>@ViewBag.AmountTitle</div>
-    <div>
-        &pound;<input id="amountInput" />
+<section id="sectionTouchPad">
+    <div id="touchPad_Title">@ViewBag.TouchPadTitle</div>
+    
+    <div>&pound;<input id="touchPad_Amount"/></div>
+    
+    <div id="touchPad_Container">
+        <div id="touchePad_FirstRow"></div>
+        <div id="touchePad_SecondRow"></div>
+        <div id="touchePad_ThirdRow"></div>
+        <div id="touchePad_FourthRow"></div>
     </div>
-    <div id="touchPad">
-        <div>1</div><div>2</div>
-        
-        @*<div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>AR</div>
-        <div>0</div>*@
-    </div>
-    <div>
-        <button id="amountButton">Submit</button>
+    
+    <div id="touchPad_Submit">
+        <button id="touchPad_SubmitButton">Submit</button>
     </div>
 </section>
 
 @*Application result section*@
-<section id="sectionResult"style="background-color:red">
-    <div id="backArrow">BACK</div>
-    <span>test2</span>
+<section id="sectionResult">
+    <div id="result_BackArrow">BACK</div>
+    <div id="result_Title">@ViewBag.ResultTitle</div>
+
+    <div id="result_Amount"></div>
+
+    <div id="result_Summary">
+        <div id="result_SummaryNotes"></div>
+        <div id="result_SummaryBigCoin"></div>
+        <div id="result_SummarySmallCoin"></div>
+    </div>
+
+    <div id="result_Thanks">
+        <span>@ViewBag.ThanksMessage</span>
+        <span>@ViewBag.Title</span>
+    </div>
 </section>

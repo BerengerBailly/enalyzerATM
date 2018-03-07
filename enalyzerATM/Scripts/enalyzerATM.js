@@ -5,24 +5,16 @@
     'slow');
 });
 
-$("#amountButton").click(function () {
+$("#touchPad_SubmitButton").click(function () {
     $('html,body').animate({
         scrollTop: $("#sectionResult").offset().top
     },
         'slow');
 });
 
-$("#backArrow").click(function () {
+$("#result_BackArrow").click(function () {
     $('html,body').animate({
         scrollTop: $("#sectionTouchPad").offset().top
     },
         'slow');
 });
-
-// TODO : See why scroll not fired
-// $("#appHome").on('scroll', function () {
-//    $('html,body').animate({
-//        scrollTop: $("#appTouchPad").offset().top
-//    },
-//        'slow');
-//});

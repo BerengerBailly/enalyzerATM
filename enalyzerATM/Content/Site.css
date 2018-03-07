@@ -1,0 +1,35 @@
+﻿body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    background-color: #2bbed3;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/*CSS for every section to manage responsive*/
+section {
+    height: 100vh;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*CSS for the first section to align horizontally and vertically the text*/
+#sectionHome {
+    align-items: center;
+    font-size:80px;
+}
+
+/*Space between elements*/
+#sectionTouchPad div {
+    margin-top: 20px;
+}
+#touchPad{
+    flex-direction: row;
+}
+
+

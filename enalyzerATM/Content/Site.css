@@ -9,27 +9,101 @@
     width: 100%;
 }
 
+/*Remove border from all input*/
+input {
+    outline: none;
+}
+
+/*CSS separating different container. (ex Title, Amout, TouchPad, ResultList...) */
+.container_Div {
+    margin-top: 2%;
+}
+
 /*CSS for every section to manage responsive*/
 section {
     height: 100vh;
     min-height: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 /*CSS for the first section to align horizontally and vertically the text*/
 #sectionHome {
-    align-items: center;
-    font-size:80px;
+    justify-content: center;
+    font-size: 80px;
 }
 
-/*Space between elements*/
-#sectionTouchPad div {
-    margin-top: 20px;
-}
-#touchPad{
-    flex-direction: row;
+/*CSS for the touchPad Section*/
+#touchPad_AmountInput {
+    font-size: 80px;
+    font-weight: bold;
+    background: #2bbed3;
+    color: white;
+    border: none;
+    /*width: 100px;
+    min-width: 100px;*/
 }
 
+/*TouchePad Touch*/
+.touchPad_Touch {
+    background: #2bbed3;
+    color: white;
+    box-shadow: white 0 0 1px 1px;
+    border-radius: 50%;
+    border:none;
+    font-size: 40px;
+    font-weight:normal;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    margin: 10px 10px;
+    padding: 0;
+}
+.touchPad_Touch:active {
+    background:white;
+    color: #2bbed3;
+    opacity:1;
+}
+
+/*TouchPad Submit button*/
+#touchPad_SubmitButton {
+    background: #2bbed3;
+    /*color: rgba(43, 190, 211, 0.5);*/
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-left:none;
+    border-right:none;
+    font-size: 40px;
+    text-align: center;
+    width: 170px;
+    height: 60px;
+    padding: 0;
+    float: left;
+}
+#touchPad_SubmitLeft {
+    float: left;
+    margin: 0px;
+    background: #2bbed3;
+    height: 60px;
+    width: 30px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 60px;
+}
+#touchPad_SubmitRight {
+    float: left;
+    margin: 0px;
+    background: #2bbed3;
+    height: 60px;
+    width: 30px;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom-right-radius: 60px;
+    border-top-right-radius: 60px;
+}
 

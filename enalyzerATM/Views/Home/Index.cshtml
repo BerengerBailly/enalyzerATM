@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Enalyzer ATM";
 }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 @*Home page section containing title of the app*@
 <section id="sectionHome">
@@ -10,36 +11,55 @@
     
 @*Application touch pad section*@
 <section id="sectionTouchPad">
-    <div id="touchPad_Title">@ViewBag.TouchPadTitle</div>
+    <div class="container_Div" id="touchPad_Title">@ViewBag.TouchPadTitle</div>
     
-    <div>&pound;<input id="touchPad_Amount"/></div>
-    
-    <div id="touchPad_Container">
-        <div id="touchePad_FirstRow"></div>
-        <div id="touchePad_SecondRow"></div>
-        <div id="touchePad_ThirdRow"></div>
-        <div id="touchePad_FourthRow"></div>
+    <div class="container_Div" id="touchePad_Amount">
+        <input id='touchPad_AmountInput' size="2" value='&pound;' disabled />
     </div>
     
-    <div id="touchPad_Submit">
-        <button id="touchPad_SubmitButton">Submit</button>
+    <div class="container_Div" id="touchPad_Container">
+        <div id="touchePad_FirstRow">
+            <input type='button' class='touchPad_Touch' value='1' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='2' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='3' onClick='addAmount(this);' />
+        </div>
+        <div id="touchePad_SecondRow">
+            <input type='button' class='touchPad_Touch' value='4' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='5' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='6' onClick='addAmount(this);' />
+        </div>
+        <div id="touchePad_ThirdRow">
+            <input type='button' class='touchPad_Touch' value='7' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='8' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='9' onClick='addAmount(this);' />
+        </div>
+        <div id="touchePad_FourthRow">
+            <input type='button' class='touchPad_Touch' value='&#8592;' onClick='ereaseAmount();' />
+            <input type='button' class='touchPad_Touch' value='0' onClick='addAmount(this);' />
+        </div>
+    </div>
+    
+    <div class="container_Div" id="touchPad_Submit">
+        <div id="touchPad_SubmitLeft"></div>
+        <button id="touchPad_SubmitButton">submit</button>
+        <div id="touchPad_SubmitRight"></div>
     </div>
 </section>
 
 @*Application result section*@
 <section id="sectionResult">
     <div id="result_BackArrow">BACK</div>
-    <div id="result_Title">@ViewBag.ResultTitle</div>
+    <div class="container_Div" id="result_Title">@ViewBag.ResultTitle</div>
 
-    <div id="result_Amount"></div>
+    <div class="container_Div" id="result_Amount"></div>
 
-    <div id="result_Summary">
+    <div class="container_Div" id="result_Summary">
         <div id="result_SummaryNotes"></div>
         <div id="result_SummaryBigCoin"></div>
         <div id="result_SummarySmallCoin"></div>
     </div>
 
-    <div id="result_Thanks">
+    <div class="container_Div" id="result_Thanks">
         <span>@ViewBag.ThanksMessage</span>
         <span>@ViewBag.Title</span>
     </div>

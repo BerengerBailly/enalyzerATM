@@ -16,5 +16,21 @@ namespace enalyzerATM.Controllers
             ViewBag.ThanksMessage = "Thank you for using";
             return View();
         }
+
+
+        [HttpPost]
+        public JsonResult GetAtmChange(int amount)
+        {
+            /*var result;
+            var listMoneys;
+            foreach (var item in listMoneys)
+            {
+
+            }
+           
+            if(am)*/
+
+            return Json("test", JsonRequestBehavior.AllowGet);
+        }
     }
 }

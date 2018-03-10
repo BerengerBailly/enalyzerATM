@@ -1,47 +1,76 @@
-﻿/*Document ready*/
-$(document).ready(function () {
-    $(".touchPad_Touch").hover(function () {
-        $(this).stop().animate({ opacity: "0.3" }, 'slow');
-    },
-        function () {
-            $(this).stop().animate({ opacity: "1" }, 'slow');
-        });
-
-    $("#touchPad_AmountInput").focus();
-});
+﻿$(document).ready(function () {
+    $("#sectionTouchPad").hide();
+    $("#sectionResult").hide();
+})
 
 
 /*Navigate through section*/
 $("#sectionHome").click(function () {
-    $('html,body').animate({
-        scrollTop: $("#sectionTouchPad").offset().top
-    },
-    'slow');
+    $("#sectionTouchPad").show();
+    $("#sectionHome").slideUp("slow", function () {
+        
+        $("#sectionHome").fadeOut("slow");
+    });
 });
-$("#touchPad_SubmitButton").click(function () {
-    $('html,body').animate({
-        scrollTop: $("#sectionResult").offset().top
-    },
-        'slow');
+$("#result_BackArrow").click(function () {;
+    $("#sectionTouchPad").slideDown("slow", function () {
+        $("#sectionResult").fadeOut("slow");
+    });
 });
-$("#result_BackArrow").click(function () {
-    $('html,body').animate({
-        scrollTop: $("#sectionTouchPad").offset().top
-    },
-        'slow');
+$(".touchPad_Touch").click(function () {
+    addAmount(this);
 });
-
-/*//Get
-var bla = $('#txt_name').val();
-
-//Set
-$('#txt_name').val(bla);
-*/
-
-/*Add amount to input and resize*/
 function addAmount(touchNum) {
     var amount = $('#touchPad_AmountInput');
-    amount.val(amount.val() + touchNum.value);
-    var size = (amount.val().length > 2) ? amount.val().length : 2;
-    amount.style.width = ((amount.val().length + 1) * 80) + 'px';;
+
+    //Add, erase or show warning message
+    if (touchNum.id == 'touchPad_Erase' && amount.text().length > 0) {
+        amount.text(amount.text().slice(0, -1));
+    } else if (touchNum.id != 'touchPad_Erase') {
+        var newAmount = amount.text() + touchNum.value;
+        if (newAmount < 999999999) {
+            amount.text(newAmount);
+        } else {
+            alert('maximum amount reached');
+            //raise modal warning
+        }
+    }
+
+    //Submit button opacity
+    if (amount.text().length > 0) {
+        $("#touchPad_SubmitButton").addClass("touchPad_Active");
+    } else {
+        $("#touchPad_SubmitButton").removeClass("touchPad_Active");
+    }
+
+}
+
+
+$("#touchPad_SubmitButton").click(function () {
+    //Ajax call
+    var amount = $('#touchPad_AmountInput');
+    if (amount.text().length > 0) {
+        $.ajax({
+            type: 'POST',
+            url: '/Home/GetAtmChange',
+            data: { amount: amount.text()
+            },
+            cache: true,
+            success: function (result) {
+                DisplayResult(result);
+            }
+        });
+    }    
+});
+
+function DisplayResult() {
+    //Add notes, coin and amount
+
+
+    //Then display the section
+    $("#sectionResult").show();
+    $("#sectionTouchPad").slideUp("slow", function () {
+
+        $("#sectionTouchPad").fadeOut("slow");
+    });
 }

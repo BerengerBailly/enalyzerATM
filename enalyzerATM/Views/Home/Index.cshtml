@@ -13,36 +13,35 @@
 <section id="sectionTouchPad">
     <div class="container_Div" id="touchPad_Title">@ViewBag.TouchPadTitle</div>
     
-    <div class="container_Div" id="touchePad_Amount">
-        <input id='touchPad_AmountInput' size="2" value='&pound;' disabled />
+    <div class="container_Div" id="touchPad_Amount">
+        <span>&pound;</span>
+        <span id='touchPad_AmountInput'></span>
     </div>
     
-    <div class="container_Div" id="touchPad_Container">
+    <div class="container_Div" id="touch Pad_Container">
         <div id="touchePad_FirstRow">
-            <input type='button' class='touchPad_Touch' value='1' onClick='addAmount(this);' />
-            <input type='button' class='touchPad_Touch' value='2' onClick='addAmount(this);' />
-            <input type='button' class='touchPad_Touch' value='3' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='1'/>
+            <input type='button' class='touchPad_Touch' value='2'/>
+            <input type='button' class='touchPad_Touch' value='3'/>
         </div>
         <div id="touchePad_SecondRow">
-            <input type='button' class='touchPad_Touch' value='4' onClick='addAmount(this);' />
-            <input type='button' class='touchPad_Touch' value='5' onClick='addAmount(this);' />
-            <input type='button' class='touchPad_Touch' value='6' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='4'/>
+            <input type='button' class='touchPad_Touch' value='5'/>
+            <input type='button' class='touchPad_Touch' value='6'/>
         </div>
         <div id="touchePad_ThirdRow">
-            <input type='button' class='touchPad_Touch' value='7' onClick='addAmount(this);' />
-            <input type='button' class='touchPad_Touch' value='8' onClick='addAmount(this);' />
-            <input type='button' class='touchPad_Touch' value='9' onClick='addAmount(this);' />
+            <input type='button' class='touchPad_Touch' value='7'/>
+            <input type='button' class='touchPad_Touch' value='8'/>
+            <input type='button' class='touchPad_Touch' value='9'/>
         </div>
         <div id="touchePad_FourthRow">
-            <input type='button' class='touchPad_Touch' value='&#8592;' onClick='ereaseAmount();' />
-            <input type='button' class='touchPad_Touch' value='0' onClick='addAmount(this);' />
+            <div class="touchPad_Touch" id="touchPad_Erase"><i class='fas fa-arrow-left'></i></div>
+            <input type='button' class='touchPad_Touch' value='0' />
         </div>
     </div>
     
     <div class="container_Div" id="touchPad_Submit">
-        <div id="touchPad_SubmitLeft"></div>
         <button id="touchPad_SubmitButton">submit</button>
-        <div id="touchPad_SubmitRight"></div>
     </div>
 </section>
 

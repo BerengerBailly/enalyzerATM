@@ -13,30 +13,30 @@
 <section id="sectionTouchPad">
     <div class="container_Div" id="touchPad_Title">@ViewBag.TouchPadTitle</div>
     
-    <div class="container_Div" id="touchPad_Amount">
-        <span>&pound;</span>
+    <div class="container_Div amountDisplay" id="touchPad_Amount">
+        <span>@ViewBag.Currency</span>
         <span id='touchPad_AmountInput'></span>
     </div>
     
     <div class="container_Div" id="touch Pad_Container">
         <div id="touchePad_FirstRow">
-            <input type='button' class='touchPad_Touch' value='1'/>
-            <input type='button' class='touchPad_Touch' value='2'/>
-            <input type='button' class='touchPad_Touch' value='3'/>
+            <input type='button' class='touchPad_Touch touch' value='1'/>
+            <input type='button' class='touchPad_Touch touch' value='2'/>
+            <input type='button' class='touchPad_Touch touch' value='3'/>
         </div>
         <div id="touchePad_SecondRow">
-            <input type='button' class='touchPad_Touch' value='4'/>
-            <input type='button' class='touchPad_Touch' value='5'/>
-            <input type='button' class='touchPad_Touch' value='6'/>
+            <input type='button' class='touchPad_Touch touch' value='4'/>
+            <input type='button' class='touchPad_Touch touch' value='5'/>
+            <input type='button' class='touchPad_Touch touch' value='6'/>
         </div>
         <div id="touchePad_ThirdRow">
-            <input type='button' class='touchPad_Touch' value='7'/>
-            <input type='button' class='touchPad_Touch' value='8'/>
-            <input type='button' class='touchPad_Touch' value='9'/>
+            <input type='button' class='touchPad_Touch touch' value='7'/>
+            <input type='button' class='touchPad_Touch touch' value='8'/>
+            <input type='button' class='touchPad_Touch touch' value='9'/>
         </div>
         <div id="touchePad_FourthRow">
-            <div class="touchPad_Touch" id="touchPad_Erase"><i class='fas fa-arrow-left'></i></div>
-            <input type='button' class='touchPad_Touch' value='0' />
+            <div class="touchPad_Touch touch" id="touchPad_Erase"><i class='fas fa-arrow-left'></i></div>
+            <input type='button' class='touchPad_Touch touch' value='0' />
         </div>
     </div>
     
@@ -47,15 +47,18 @@
 
 @*Application result section*@
 <section id="sectionResult">
-    <div id="result_BackArrow">BACK</div>
+    <div class="touch" id="result_BackArrow"><i class='fas fa-arrow-left'></i></div>
     <div class="container_Div" id="result_Title">@ViewBag.ResultTitle</div>
 
-    <div class="container_Div" id="result_Amount"></div>
+    <div class="container_Div amountDisplay" id="result_Amount">
+        <span>@ViewBag.Currency</span>
+        <span id='result_AmountInput'></span>
+    </div>
 
     <div class="container_Div" id="result_Summary">
-        <div id="result_SummaryNotes"></div>
-        <div id="result_SummaryBigCoin"></div>
-        <div id="result_SummarySmallCoin"></div>
+        <div class="result_SummaryMoney" id="result_SummaryNotes"></div>
+        <div class="result_SummaryMoney" id="result_SummaryBigCoin"></div>
+        <div class="result_SummaryMoney" id="result_SummarySmallCoin"></div>
     </div>
 
     <div class="container_Div" id="result_Thanks">

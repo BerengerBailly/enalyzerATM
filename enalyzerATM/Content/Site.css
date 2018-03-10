@@ -7,16 +7,17 @@
     overflow: hidden;
 }
 
+/******** CSS COMMON TO ALL SECTION ******/
+
 /*Remove border from all input and button*/
 input, button {
     outline: none;
 }
-
 /*CSS separating different container. (ex Title, Amout, TouchPad, ResultList...) */
 .container_Div {
     margin-top: 2%;
+    /*display:flex;*/
 }
-
 /*CSS for every section to manage responsive*/
 section {
     height: 100vh;
@@ -25,47 +26,51 @@ section {
     flex-direction: column;
     align-items: center;
 }
-
-/*CSS for the first section to align the text*/
-#sectionHome {
-    justify-content: center;
-    font-size: 80px;
-}
-
-/*CSS for the touchPad Section*/
-#touchPad_Amount{
-    min-width:100px;
-    font-size: 80px;
-    font-weight: bold;
-}
-#touchPad_AmountInput {    
-   /*background: #2bbed3;
-    color: white;*/ 
-    border-right:1px solid white;
-}
-.touchPad_Touch {
+/*CSS For the touch effect*/
+.touch {
     background-color: #2bbed3;
     color: white;
     box-shadow: white 0 0 1px 1px;
     border-radius: 50%;
-    border:none;
+    border: none;
     font-size: 40px;
-    font-weight:normal;
+    font-weight: normal;
     text-align: center;
     width: 60px;
     height: 60px;
     margin: 10px 10px;
     padding: 0;
-     -webkit-transition-property:color, background; 
-     -webkit-transition-duration: 0.2s, 0.4s; 
-     -webkit-transition-timing-function: linear, ease-in; 
-     float:left;
-     line-height: 60px; /*Align the arrow*/
+    -webkit-transition-property: color, background;
+    -webkit-transition-duration: 0.2s, 0.4s;
+    -webkit-transition-timing-function: linear, ease-in;
+    float: left;
+    line-height: 60px; /*Align the arrow*/
 }
-.touchPad_Touch:hover {
-    background-color:white;
+.touch:hover {
+    background-color: white;
     color: #2bbed3;
     cursor: pointer; /*Render cursor for the arrow*/
+}
+/*CSS for amount display*/
+.amountDisplay {
+    min-width: 100px;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+/****** CSS for the first section ******/
+#sectionHome {
+    justify-content: center;
+    font-size: 80px;
+}
+
+
+
+/****** CSS for the touchPad Section *******/
+#touchPad_AmountInput {    
+   /*background: #2bbed3;
+    color: white;*/ 
+    border-right:1px solid white;
 }
 #touchPad_SubmitButton {
     background: #2bbed3;
@@ -92,5 +97,61 @@ section {
     background-color:white !important;
     color: #2bbed3 !important;
 }
+
+
+
+/**** CSS for the summary Section ******/
+#result_BackArrow {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+}
+#result_Summary {
+    display: flex;
+    flex-direction: row;
+}
+.result_SummaryMoney {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.moneyContainer {
+    border: 1px solid white;
+    font-weight: normal;
+    width: 360px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+.moneySymbol {
+    width: 180px;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.moneyNumAndAmount {
+    width: 180px;
+    height: 60px;
+
+}
+/*Define css for notes and coins. Add here new css for different kind of money*/
+.Notes {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 7px;
+    margin-left: 30px;
+}
+.Coins {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 7px;
+    margin-left: 30px;
+}
+
+
 
 

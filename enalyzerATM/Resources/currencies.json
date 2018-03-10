@@ -1,0 +1,128 @@
+﻿[
+    { // English currency
+        "ListMoney": [
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 1000,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 500,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 200,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 100,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 50,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 1,
+                "Size": 40,
+                "Amount": 20,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 20,
+                "Amount": 10,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 50,
+                "Amount": 5,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 30,
+                "Amount": 2,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 10,
+                "Amount": 1,
+                "Symbol": "Coins"
+            }
+        ],
+        "Name": "GBP",
+        "Symbol": "£"
+    },
+    { // US currency
+        "ListMoney": [
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 500,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 200,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 100,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 0,
+                "Size": 0,
+                "Amount": 50,
+                "Symbol": "Notes"
+            },
+            {
+                "Type": 1,
+                "Size": 40,
+                "Amount": 20,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 20,
+                "Amount": 10,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 50,
+                "Amount": 5,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 30,
+                "Amount": 2,
+                "Symbol": "Coins"
+            },
+            {
+                "Type": 1,
+                "Size": 10,
+                "Amount": 1,
+                "Symbol": "Coins"
+            }
+        ],
+        "Name": "USD",
+        "Symbol": "$"
+    }
+]

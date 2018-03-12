@@ -16,11 +16,6 @@ namespace enalyzerATM.Controllers
     {
         public ActionResult Index()
         {
-            //TODO : User res file for translations
-            ViewBag.TouchPadTitle = "Select amount";
-            ViewBag.ResultTitle = "Depositing";
-            ViewBag.ThanksMessage = "Thank you for using";
-            ViewBag.Currency = "£"; //TODO load user's currency
             return View();
         }
 
@@ -34,35 +29,42 @@ namespace enalyzerATM.Controllers
         [HttpPost]
         public JsonResult GetAtmChange(int amount, string currencyName)
         {
-            string errorMessage = string.Empty;
-
-            //Check valid parameters
-            if(amount == 0 || String.IsNullOrEmpty(currencyName))
-            {
-                //Log some message
-                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            }
-                
-            //Get the list of money
-            List<Money> listAllMoney = AtmHelper.CalculateChange(currencyName, amount);
-            List<Money> listDistinctMoney = listAllMoney.Distinct().ToList();
-            
-            //Get the list of money view model
             List<MoneyViewModel> listMoneyToDisplay = new List<MoneyViewModel>();
-            MoneyViewModel moneyToDisplay = null;
-            foreach (Money moneyType in listDistinctMoney)
-            {
-                moneyToDisplay = new MoneyViewModel();
-                moneyToDisplay.Number = listAllMoney.Where(item => item == moneyType).Count();
-                moneyToDisplay.DisplayMoney = moneyType;
-                listMoneyToDisplay.Add(moneyToDisplay);
-            }
 
-            //If there is no money to display throw error
-            if (listMoneyToDisplay.Count == 0)
+            try
+            {
+                //Check valid parameters
+                if (amount == 0 || String.IsNullOrEmpty(currencyName))
+                    throw new Exception("Invalid parameters passed to the method");
+
+                //Get the list of money
+                List<Money> listAllMoney = AtmHelper.CalculateChange(currencyName, amount);
+                List<Money> listDistinctMoney = listAllMoney.Distinct().ToList();
+
+                //Get the list of money view model
+                
+                MoneyViewModel moneyToDisplay = null;
+                foreach (Money moneyType in listDistinctMoney)
+                {
+                    moneyToDisplay = new MoneyViewModel();
+                    moneyToDisplay.Number = listAllMoney.Where(item => item == moneyType).Count();
+                    moneyToDisplay.DisplayMoney = moneyType;
+                    listMoneyToDisplay.Add(moneyToDisplay);
+                }
+
+                //If there is no money to display return explicit message to the client
+                if (listMoneyToDisplay.Count == 0)
+                    throw new Exception("No money to return");
+
+            }
+            catch(Exception e)
+            {
+                //TODO Log exception
                 Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            }
 
             return Json(new { displayAmount = amount, listMoney = listMoneyToDisplay }, JsonRequestBehavior.AllowGet);
+              
         }
     }
 }

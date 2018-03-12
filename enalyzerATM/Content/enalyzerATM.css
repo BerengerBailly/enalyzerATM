@@ -4,7 +4,6 @@
     font-weight: bold;
     color: white;
     background-color: #2bbed3;
-    overflow: hidden;
 }
 
 /******** CSS COMMON TO ALL SECTION ******/
@@ -103,53 +102,62 @@ section {
 /**** CSS for the summary Section ******/
 #result_BackArrow {
     position: absolute;
-    top: 10px;
-    left: 70px;
+    top: 2%;
+    left: 2%;
 }
 #result_Summary {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .result_SummaryMoney {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 .moneyContainer {
     border: 1px solid white;
     font-weight: normal;
-    width: 360px;
-    height: 90px;
+    width: 376px;
+    height: 95px;
     display: flex;
     align-items: center;
 }
 .moneySymbol {
-    width: 180px;
+    width: 120px;
     height: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
 }
-.moneyNumAndAmount {
-    width: 180px;
-    height: 60px;
-
+.moneySymbolNotes {
+    background-color:white;
+}
+.moneySymbolCoins {
+    background-color: #2bbed3;
 }
 /*Define css for notes and coins. Add here new css for different kind of money*/
+.moneySymbol div {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-left: 40px;
+}
 .Notes {
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: white;
-    margin: 7px;
-    margin-left: 30px;
+    background-color: #2bbed3;
 }
 .Coins {
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
     background-color: white;
-    margin: 7px;
-    margin-left: 30px;
+}
+.moneyNumAndAmount {
+    width: 208px;
+    height: 60px;
+    text-align: center;
+}
+#result_Thanks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 

@@ -14,6 +14,9 @@ namespace enalyzerATM
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui-{version}.js"));
+
             // Utilisez la version de développement de Modernizr pour le développement et l'apprentissage. Puis, une fois
             // prêt pour la production, utilisez l'outil de génération à l'adresse https://modernizr.com pour sélectionner uniquement les tests dont vous avez besoin.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -23,12 +26,23 @@ namespace enalyzerATM
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/enalyzerATM").Include(
-            //          "~/Scripts/enalyzerATM.js"));
+            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+              "~/Content/themes/base/core.css",
+              "~/Content/themes/base/resizable.css",
+              "~/Content/themes/base/selectable.css",
+              "~/Content/themes/base/accordion.css",
+              "~/Content/themes/base/autocomplete.css",
+              "~/Content/themes/base/button.css",
+              "~/Content/themes/base/dialog.css",
+              "~/Content/themes/base/slider.css",
+              "~/Content/themes/base/tabs.css",
+              "~/Content/themes/base/datepicker.css",
+              "~/Content/themes/base/progressbar.css",
+              "~/Content/themes/base/theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/enalyzerATM.css"));
         }
     }
 }

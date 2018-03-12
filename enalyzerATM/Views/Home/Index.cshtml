@@ -3,66 +3,70 @@
 }
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@*Home page section containing title of the app*@
-<section id="sectionHome">
-    <span>Enalyzer</span>
-    <span>ATM</span>
-</section>
-    
-@*Application touch pad section*@
-<section id="sectionTouchPad">
-    <div class="container_Div" id="touchPad_Title">@ViewBag.TouchPadTitle</div>
-    
-    <div class="container_Div amountDisplay" id="touchPad_Amount">
-        <span>@ViewBag.Currency</span>
-        <span id='touchPad_AmountInput'></span>
-    </div>
-    
-    <div class="container_Div" id="touch Pad_Container">
-        <div id="touchePad_FirstRow">
-            <input type='button' class='touchPad_Touch touch' value='1'/>
-            <input type='button' class='touchPad_Touch touch' value='2'/>
-            <input type='button' class='touchPad_Touch touch' value='3'/>
-        </div>
-        <div id="touchePad_SecondRow">
-            <input type='button' class='touchPad_Touch touch' value='4'/>
-            <input type='button' class='touchPad_Touch touch' value='5'/>
-            <input type='button' class='touchPad_Touch touch' value='6'/>
-        </div>
-        <div id="touchePad_ThirdRow">
-            <input type='button' class='touchPad_Touch touch' value='7'/>
-            <input type='button' class='touchPad_Touch touch' value='8'/>
-            <input type='button' class='touchPad_Touch touch' value='9'/>
-        </div>
-        <div id="touchePad_FourthRow">
-            <div class="touchPad_Touch touch" id="touchPad_Erase"><i class='fas fa-arrow-left'></i></div>
-            <input type='button' class='touchPad_Touch touch' value='0' />
-        </div>
-    </div>
-    
-    <div class="container_Div" id="touchPad_Submit">
-        <button id="touchPad_SubmitButton">submit</button>
-    </div>
-</section>
+<div id="enalyzerATM">
+    @*Home page section containing title of the app*@
+    <section id="sectionHome">
+        <span>@enalyzerATM.Resources.Resource.CompanyName</span>
+        <span>@enalyzerATM.Resources.Resource.CompanyProduct</span>
+    </section>
 
-@*Application result section*@
-<section id="sectionResult">
-    <div class="touch" id="result_BackArrow"><i class='fas fa-arrow-left'></i></div>
-    <div class="container_Div" id="result_Title">@ViewBag.ResultTitle</div>
+    @*Application touch pad section*@
+    <section id="sectionTouchPad">
+        <div class="container_Div" id="touchPad_Title">@enalyzerATM.Resources.Resource.TouchpadTitle</div>
 
-    <div class="container_Div amountDisplay" id="result_Amount">
-        <span>@ViewBag.Currency</span>
-        <span id='result_AmountInput'></span>
-    </div>
+        <div class="container_Div amountDisplay" id="touchPad_Amount">
+            <span>@enalyzerATM.Resources.Resource.Currency</span>
+            <span id='touchPad_AmountInput'></span>
+        </div>
 
-    <div class="container_Div" id="result_Summary">
-        <div class="result_SummaryMoney" id="result_SummaryNotes"></div>
-        <div class="result_SummaryMoney" id="result_SummaryBigCoin"></div>
-        <div class="result_SummaryMoney" id="result_SummarySmallCoin"></div>
-    </div>
+        <div class="container_Div" id="touch Pad_Container">
+            <div id="touchePad_FirstRow">
+                <input type='button' class='touchPad_Touch touch' value='1' />
+                <input type='button' class='touchPad_Touch touch' value='2' />
+                <input type='button' class='touchPad_Touch touch' value='3' />
+            </div>
+            <div id="touchePad_SecondRow">
+                <input type='button' class='touchPad_Touch touch' value='4' />
+                <input type='button' class='touchPad_Touch touch' value='5' />
+                <input type='button' class='touchPad_Touch touch' value='6' />
+            </div>
+            <div id="touchePad_ThirdRow">
+                <input type='button' class='touchPad_Touch touch' value='7' />
+                <input type='button' class='touchPad_Touch touch' value='8' />
+                <input type='button' class='touchPad_Touch touch' value='9' />
+            </div>
+            <div id="touchePad_FourthRow">
+                <div class="touchPad_Touch touch" id="touchPad_Erase"><i class='fas fa-arrow-left'></i></div>
+                <input type='button' class='touchPad_Touch touch' value='0' />
+            </div>
+        </div>
 
-    <div class="container_Div" id="result_Thanks">
-        <span>@ViewBag.ThanksMessage</span>
-        <span>@ViewBag.Title</span>
-    </div>
-</section>
+        <div class="container_Div" id="touchPad_Submit">
+            <button id="touchPad_SubmitButton">@enalyzerATM.Resources.Resource.SubmitButton</button>
+        </div>
+    </section>
+   
+    @*Application result section*@
+    <section id="sectionResult">
+        <div class="touch" id="result_BackArrow"><i class='fas fa-arrow-left'></i></div>
+        <div class="container_Div" id="result_Title">@enalyzerATM.Resources.Resource.ResultTitle</div>
+        <div class="container_Div amountDisplay" id="result_Amount">
+            <span>@enalyzerATM.Resources.Resource.Currency</span>
+            <span id='result_AmountInput'></span>
+        </div>
+        <div class="container_Div" id="result_Summary">
+            <div class="result_SummaryMoney" id="result_SummaryNotes"></div>
+            <div class="result_SummaryMoney" id="result_SummaryBigCoin"></div>
+            <div class="result_SummaryMoney" id="result_SummarySmallCoin"></div>
+        </div>
+        <div class="container_Div" id="result_Thanks">
+            <span>@enalyzerATM.Resources.Resource.ThanksMessage</span>
+            <span>@enalyzerATM.Resources.Resource.CompanyName @enalyzerATM.Resources.Resource.CompanyProduct</span>
+        </div>
+    </section>
+</div>
+
+@*Error modal dialog*@
+<div id="dialog" title="An error occured" style="display:none">
+    <p id="errorMessage"></p>
+</div>
